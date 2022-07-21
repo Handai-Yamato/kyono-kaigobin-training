@@ -1,0 +1,123 @@
+/**
+ * #home-slide
+ */
+@use "../../../global" as *;
+
+.p-home-slide {
+  position: relative;
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq(md) {
+    margin-top: 5rem;
+  }
+
+  @include mq(lg) {
+    margin-top: 3rem;
+  }
+}
+
+.p-home-slide__img {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* スライダーの設定 */
+.p-home-slide .slick-slide {
+  margin: 0 5px;
+}
+
+/* 矢印カスタマイズ */
+.p-home-slide .slide-arrow {
+  display: inline-block;
+  transition: all 0.5s;
+  position: absolute;
+  bottom: 50%;
+  z-index: index($elements, p-home-slide);
+}
+
+.p-home-slide .slide-arrow:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.p-home-slide .prev-arrow {
+  left: 5%;
+  width: 25px;
+
+  @include mq(sm) {
+    left: 1%;
+    width: 50px;
+  }
+
+  @include mq(lg) {
+    left: 23%;
+  }
+}
+.p-home-slide .next-arrow {
+  right: 5%;
+  width: 25px;
+
+  @include mq(sm) {
+    right: 1%;
+    width: 50px;
+  }
+
+  @include mq(lg) {
+    right: 23%;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.slide-dots {
+  text-align: center;
+}
+
+.slide-dots li {
+  display: inline-block;
+  margin: 5px 10px;
+
+  @include mq(sm) {
+    margin: 5px 15px;
+  }
+
+  @include mq(lg) {
+    margin: 5px 10px;
+  }
+}
+
+.slide-dots button {
+  position: relative;
+  text-indent: -9999px;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "●";
+    font-size: 10px;
+    text-indent: 0px;
+    color: #000;
+    opacity: 0.25;
+
+    @include mq(sm) {
+      font-size: 20px;
+    }
+
+    @include mq(lg) {
+      font-size: 10px;
+    }
+  }
+}
+
+.slide-dots .slick-active button::before {
+  z-index: 1;
+  color: pink !important;
+}

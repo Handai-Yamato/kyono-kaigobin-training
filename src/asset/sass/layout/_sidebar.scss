@@ -1,0 +1,704 @@
+/**
+ * #sidebar
+ */
+@use "../global" as *;
+
+.l-sidebar {
+  margin-top: 2.5rem;
+
+  @include mq(md) {
+    margin-top: 5rem;
+  }
+
+  @include mq(lg) {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 5rem;
+  }
+}
+
+.l-sidebar__content + .l-sidebar__content {
+  margin-top: 2.5rem;
+
+  @include mq(sm) {
+    margin-top: 5rem;
+  }
+}
+
+.l-sidebar__title {
+  @include mq(lg) {
+    justify-content: center;
+  }
+}
+
+.l-sidebar__content-box {
+  text-align: center;
+}
+
+/*--------------------------------
+	キーワード
+--------------------------------*/
+.l-sidebar__keyword-wrap {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6.5%;
+    width: 23px;
+    height: 23px;
+    background: url(../img/search-icon-black.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include mq(sm) {
+      left: 6%;
+    }
+
+    @include mq(lg) {
+      left: 7%;
+    }
+  }
+}
+
+.l-sidebar__keyword-search input {
+  position: relative;
+  text-align: left;
+  flex-grow: 1;
+  height: 40px;
+  width: 90.9%;
+  padding-left: 4rem;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  background: #fff;
+
+  @include mq(sm) {
+    height: 50px;
+    padding-top: 1.3%;
+    padding-bottom: 0.7%;
+  }
+
+  @include mq(md) {
+    padding-top: 1.6%;
+    padding-bottom: 0.7%;
+  }
+
+  @include mq(lg) {
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.l-sidebar__keyword-search input::placeholder {
+  color: #b7b7b7;
+  font-size: 1.4rem;
+
+  @include mq(sm) {
+    font-size: calc(1.4rem + 14 * (100vw - 576px) / 416); //14px~28pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 1.2rem;
+  }
+}
+
+.l-sidebar__keyword-button {
+  max-width: 75px;
+  width: 100%;
+  height: 25px;
+  margin-top: 1rem;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  color: $color-text2;
+  background: $color-accent1;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @include mq(sm) {
+    height: 50px;
+    max-width: 150px;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+  }
+
+  @include mq(lg) {
+    max-width: 90px;
+    width: 100%;
+    height: 30px;
+    font-size: 1.6rem;
+  }
+}
+
+/*--------------------------------
+	カテゴリー
+--------------------------------*/
+.l-sidebar__category-list {
+  text-align: left;
+  width: 90.9%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 3.5%;
+  padding-left: 3.5%;
+  background: $color-background1;
+
+  @include mq(sm) {
+    font-size: calc(1.6rem + 16 * (100vw - 576px) / 416); //16px~32pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 1.4rem;
+  }
+}
+
+.l-sidebar__category-item {
+  margin-left: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-weight: 800;
+
+  @include mq(sm) {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  @include mq(lg) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.l-sidebar__category-item p {
+  margin-left: 16%;
+}
+
+.l-sidebar__category-item--child p {
+  margin-left: 14%;
+}
+
+.l-sidebar__category-item a {
+  align-items: center;
+}
+
+.l-sidebar__category-item--child li {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 35px;
+  font-weight: 500;
+
+  @include mq(sm) {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  @include mq(lg) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.l-sidebar-category-border {
+  border-top: 2px dotted $color-border;
+}
+
+.l-sidebar__category-list li {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    top: 33%;
+    right: 5px;
+    width: 13px;
+    height: 13px;
+    border-top: solid 4px $color-accent1;
+    border-right: solid 4px $color-accent1;
+    border-radius: 3px;
+
+    @include mq(lg) {
+      top: 36%;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.l-sidebar__category-list li a {
+  gap: 10px;
+  height: 40px;
+
+  @include mq(sm) {
+    gap: 20px;
+  }
+
+  @include mq(lg) {
+    gap: 8px;
+  }
+}
+
+.l-sidebar__category-list li a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: #ed7fa5;
+    opacity: 0.7;
+  }
+}
+
+/*------ アイコンのサイズ調整 -------*/
+.l-sidebar__category-icon {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.l-sidebar__category-icon--omutu {
+  &::before {
+    width: 30px;
+    content: url("");
+    @include bg-image-svg($filename: omutu-icon);
+    background-size: contain;
+
+    @include mq(sm) {
+      width: 60px;
+      height: 50px;
+    }
+
+    @include mq(lg) {
+      width: 26px;
+      height: 21px;
+    }
+  }
+}
+
+.l-sidebar__category-icon--omutu-pants {
+  &::before {
+    width: 21px;
+    content: url("");
+    @include bg-image-svg($filename: omutu-pants-icon);
+    background-size: contain;
+
+    @include mq(sm) {
+      width: 42px;
+      height: 37px;
+    }
+
+    @include mq(lg) {
+      width: 18px;
+      height: 16px;
+    }
+  }
+}
+
+.l-sidebar__category-icon--omutu-tape {
+  &::before {
+    width: 22px;
+    content: url("");
+    @include bg-image-svg($filename: omutu-tape-icon);
+    background-size: contain;
+
+    @include mq(sm) {
+      width: 44px;
+      height: 37px;
+    }
+
+    @include mq(lg) {
+      width: 19px;
+      height: 16px;
+    }
+  }
+}
+
+.l-sidebar__category-icon--pad {
+  &::before {
+    width: 21px;
+    content: url("");
+    @include bg-image-svg($filename: pad-icon);
+    background-size: contain;
+
+    @include mq(sm) {
+      width: 42px;
+      height: 52px;
+    }
+
+    @include mq(lg) {
+      width: 22px;
+      height: 28px;
+    }
+  }
+}
+
+.l-sidebar__category-icon--pad-pants {
+  &::before {
+    width: 11px;
+    content: url("");
+    @include bg-image-svg($filename: pad-pants-icon);
+    background-size: contain;
+
+    @include mq(sm) {
+      width: 22px;
+      height: 43px;
+    }
+
+    @include mq(lg) {
+      width: 11px;
+      height: 23px;
+    }
+  }
+}
+
+.l-sidebar__category-icon--pad-tape {
+  &::before {
+    position: absolute;
+    width: 15px;
+    content: url("");
+    @include bg-image-svg($filename: pad-tape-icon);
+    background-size: contain;
+
+    @include mq(sm) {
+      width: 30px;
+      height: 43px;
+    }
+
+    @include mq(lg) {
+      width: 15px;
+      height: 23px;
+    }
+  }
+}
+
+.l-sidebar__category-icon--etc {
+  &::before {
+    width: 15px;
+    left: 5px;
+    content: url("");
+    @include bg-image-svg($filename: etc-icon);
+    background-size: contain;
+
+    @include mq(sm) {
+      width: 30px;
+      height: 43px;
+    }
+
+    @include mq(lg) {
+      width: 15px;
+      height: 23px;
+    }
+  }
+}
+
+/*--------------------------------
+	ブランド
+--------------------------------*/
+.l-sidebar__brand-list {
+  text-align: left;
+  width: 90.9%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.6rem 2rem;
+  background: $color-background1;
+
+  @include mq(sm) {
+    padding: 3.2rem 4rem;
+    font-size: calc(1.6rem + 16 * (100vw - 576px) / 416); //16px~32pxで可変
+  }
+
+  @include mq(lg) {
+    padding: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+.l-sidebar__brand-list a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: #ed7fa5;
+    opacity: 0.7;
+  }
+}
+
+.l-sidebar__brand-item span {
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  color: $color-accent1;
+
+  @include mq(sm) {
+    font-size: calc(1rem + 6 * (100vw - 576px) / 416); //10px~16pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 1.6rem;
+  }
+}
+
+/*--------------------------------
+	メーカー
+--------------------------------*/
+.l-sidebar__maker-list {
+  text-align: left;
+  width: 90.9%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.6rem 2rem;
+  background: $color-background1;
+
+  @include mq(sm) {
+    padding: 3.2rem 4rem;
+    font-size: calc(1.6rem + 16 * (100vw - 576px) / 416); //16px~32pxで可変
+  }
+
+  @include mq(lg) {
+    padding: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+.l-sidebar__maker-list a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: #ed7fa5;
+    opacity: 0.7;
+  }
+}
+
+.l-sidebar__maker-item span {
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  color: $color-accent1;
+
+  @include mq(sm) {
+    font-size: calc(1rem + 6 * (100vw - 576px) / 416); //10px~16pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 1.6rem;
+  }
+}
+
+/*--------------------------------
+	価格帯
+--------------------------------*/
+.l-sidebar__price-list {
+  text-align: left;
+  width: 90.9%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.6rem 2rem;
+  background: $color-background1;
+
+  @include mq(sm) {
+    padding: 3.2rem 4rem;
+    font-size: calc(1.6rem + 16 * (100vw - 576px) / 416); //16px~32pxで可変
+  }
+
+  @include mq(lg) {
+    padding: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+.l-sidebar__price-item + .l-sidebar__price-item {
+  margin-top: 0.75rem;
+
+  @include mq(sm) {
+    margin-top: 1.5rem;
+  }
+
+  @include mq(lg) {
+    margin-top: 2rem;
+  }
+}
+
+/*--------------------------------
+	カレンダー
+--------------------------------*/
+.l-sidebar__calendar {
+  display: none;
+  background: #ffffff;
+  width: 100%;
+  text-align: center;
+
+  @include mq(lg) {
+    display: block;
+  }
+}
+
+.l-sidebar__calendar-inner {
+  padding-top: 2rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.l-sidebar__calendar table {
+  width: 100%;
+}
+/*--------------------------------
+  メールマガジン
+  --------------------------------*/
+.l-sidebar__mail a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $color-accent1;
+  border-radius: 5px;
+
+  @include mq(lg) {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid $color-accent1;
+  }
+}
+
+.l-sidebar__mail-icon {
+  display: flex;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  width: 18.1818%;
+  max-width: 120px;
+  height: 60px;
+  padding: 1.6rem;
+  background: $color-accent1;
+
+  @include mq(sm) {
+    height: 120px;
+  }
+
+  @include mq(lg) {
+    height: 60px;
+  }
+}
+
+.l-sidebar__mail p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  font-size: 2rem;
+  font-weight: 500;
+  border-top: 2px solid $color-accent1;
+  border-right: 2px solid $color-accent1;
+  border-bottom: 2px solid $color-accent1;
+
+  @include mq(sm) {
+    height: 120px;
+    font-size: calc(2rem + 20 * (100vw - 576px) / 416); //20px~40pxで可変
+  }
+
+  @include mq(lg) {
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+/*--------------------------------
+	医療費控除
+--------------------------------*/
+.l-sidebar__deduction {
+  position: relative;
+  width: 100%;
+  line-height: 1.77;
+}
+
+.l-sidebar__deduction-img {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq(lg) {
+    width: 90.9%;
+  }
+}
+
+.l-sidebar__deduction-text {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  transform: translateX(-50%);
+  width: 100%;
+  font-size: 1.6rem;
+
+  @include mq(sm) {
+    font-size: calc(1.6rem + 16 * (100vw - 576px) / 416); //16px~32pxで可変
+  }
+
+  @include mq(lg) {
+    bottom: 45px;
+    font-size: 1.6rem;
+    line-height: 1.75;
+  }
+}
+
+.l-sidebar__deduction-text p {
+  width: 100%;
+  color: $color-text2;
+}
+
+.l-sidebar__deduction-text a {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  color: $color-text1;
+  background: $color-background1;
+  border-radius: 44px;
+
+  &:hover {
+    color: #ed7fa5;
+    opacity: 0.7;
+  }
+
+  @include mq(md) {
+    padding: 1.5rem 5rem;
+  }
+
+  @include mq(lg) {
+    display: inline-block;
+    max-width: 220px;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+.l-sidebar__deduction-button {
+  position: relative;
+  width: 74.83%;
+  max-width: 489px;
+
+  &::after {
+    position: absolute;
+    top: 40%;
+    content: "";
+    transform: rotate(45deg);
+    width: 13px;
+    height: 13px;
+    right: 13%;
+    border-top: solid 4px $color-accent1;
+    border-right: solid 4px $color-accent1;
+    border-radius: 3px;
+
+    @include mq(lg) {
+      width: 10px;
+      height: 10px;
+      right: 15px;
+    }
+  }
+}

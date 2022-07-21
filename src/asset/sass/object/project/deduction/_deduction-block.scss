@@ -1,0 +1,28 @@
+@use "../../../global" as *;
+
+.p-deduction-block {
+  margin-top: 2.5rem;
+
+  @include mq(sm) {
+    margin-top: 5rem;
+  }
+}
+
+.p-deduction-block__title {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.5rem;
+  line-height: 1.75;
+  border-radius: 30px;
+  color: $color-text2;
+  background: $color-accent1;
+
+  @include mq(sm) {
+    padding: 1.6rem 3.2rem;
+    font-size: calc(1.5rem + 15 * (100vw - 576px) / 416); //15px~30pxで可変
+  }
+
+  @include mq(lg) {
+    padding: 0.4rem 2rem;
+    font-size: 3rem;
+  }
+}

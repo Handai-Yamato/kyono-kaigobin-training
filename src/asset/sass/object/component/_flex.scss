@@ -1,0 +1,28 @@
+/**
+ * #flex
+ */
+ @use "../../global" as *;
+
+
+ .c-flex {
+    display: flex;
+ }
+
+ .c-lg-flex {
+    @include mq(lg) {
+        display: flex;
+    }
+ }
+
+ .c-flex-center {
+   align-items: center;
+   justify-content: center;
+ }
+
+ .c-flex-row-reverse {
+    flex-direction: row-reverse;
+ }
+
+ .c-flex-align--center {
+   align-items: center;
+ }

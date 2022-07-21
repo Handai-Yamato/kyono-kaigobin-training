@@ -1,0 +1,66 @@
+@use "../../../global" as *;
+
+.p-deduction-subject {
+}
+
+.p-deduction-subject__text {
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 300;
+
+  @include mq(sm) {
+    font-size: calc(1.1rem + 11 * (100vw - 576px) / 416); //11px~22pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 2rem;
+  }
+}
+
+.p-deduction-subject__text--sm {
+  font-weight: 300;
+  text-align: left;
+  font-size: 1rem;
+  //   transform: scale(0.8);
+  //   transform-origin: left;
+
+  @include mq(sm) {
+    font-size: calc(1rem + 6 * (100vw - 576px) / 416); //10px~16pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 2rem;
+  }
+}
+
+.p-deduction-subject__button {
+  text-align: center;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.2rem;
+
+  @include mq(sm) {
+    margin-top: 4rem;
+    font-size: calc(1.2rem + 12 * (100vw - 576px) / 416); //12px~24pxで可変
+  }
+
+  @include mq(lg) {
+    margin-top: 5rem;
+    font-size: 2.5rem;
+  }
+}
+
+.p-deduction-subject__button a {
+  width: 58.13%;
+  margin-bottom: 3.25rem;
+
+  @include mq(md) {
+    margin-bottom: 7.5rem;
+    width: 430px;
+  }
+
+  @include mq(lg) {
+    margin-bottom: 0;
+  }
+}

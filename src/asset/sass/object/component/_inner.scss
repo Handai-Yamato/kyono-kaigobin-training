@@ -1,0 +1,16 @@
+@use "../../global" as *;
+
+.c-inner {
+  max-width: 88%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq(sm) {
+   
+  }
+
+  @include mq(lg) {
+    width: 88%;
+    max-width: 1280px;
+  }
+}

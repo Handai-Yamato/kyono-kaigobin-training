@@ -1,0 +1,63 @@
+/**
+ * #search-box
+ */
+
+@use "../../global" as *;
+
+.c-search__area {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 1rem;
+  padding-right: 6%;
+  padding-bottom: 1rem;
+  padding-left: 6%;
+  background-color: $color-accent1;
+
+  @include mq(sm) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @include mq(lg) {
+    margin-top: 1rem;
+    background: none;
+  }
+}
+
+.c-search input[type="text"] {
+  flex-grow: 1;
+  height: 30px;
+  padding: 0.7rem 0 0.7rem 1.5rem;
+  border: 1px solid $color-border;
+  border-radius: 5px 0 0 5px;
+  background: #fff;
+
+  @include mq(md) {
+    height: 60px;
+  }
+
+  @include mq(lg) {
+    max-width: 550px;
+  }
+}
+
+.c-search input::placeholder {
+  color: #b7b7b7;
+}
+
+.c-search__button--black {
+  @include bg-image-svg($filename: search-icon-white);
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  font-size: 0.75rem;
+  background-color: #333947;
+  background-size: 20px;
+  cursor: pointer;
+
+  @include mq(md) {
+    padding: 30px;
+  }
+}

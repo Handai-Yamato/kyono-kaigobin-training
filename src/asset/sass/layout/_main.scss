@@ -1,0 +1,19 @@
+/**
+ * #main
+ */
+@use "../global" as *;
+
+.l-main__inner {
+  padding-top: 2.5rem;
+
+  @include mq(sm) {
+    padding-top: 5rem;
+  }
+
+  @include mq(lg) {
+    max-width: 930px;
+    width: calc(100% - 250px); //300px(sidebar)-50px(余白) = 250px
+    margin-left: 50px;
+    padding-bottom: 75px;
+  }
+}

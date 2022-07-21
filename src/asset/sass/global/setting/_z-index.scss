@@ -1,0 +1,4 @@
+$elements:p-home-slide, l-header__gnav-mask, l-header__gnav, l-header__hamburger;
+
+// z-indexの小さい順番に並べる
+// cssの記載 → z-index: index($elements, l-header);

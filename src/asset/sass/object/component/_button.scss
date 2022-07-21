@@ -1,0 +1,157 @@
+/**
+ * #button
+ */
+@use "../../global" as *;
+
+.c-button--more {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-align: center;
+  color: $color-text2;
+  background: $color-accent1;
+  border: 1px solid $color-accent1;
+  border-radius: 30px;
+
+  &:hover {
+    background: #fff;
+  }
+
+  @include mq(lg) {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+}
+
+.c-button--contact {
+  display: block;
+  width: 100%;
+  max-width: 135px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-align: center;
+  color: $color-accent1;
+  background: $color-background1;
+  border: 1px solid $color-accent1;
+
+  &:hover {
+    color: $color-text2;
+    background: $color-accent1;
+  }
+}
+
+.c-button--deduction {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  color: $color-text2;
+  box-shadow: 0 3px 0 0 rgba(160, 0, 38, 0.75);
+  border-radius: 8px;
+  background: $color-accent2;
+  transition: 0.3s;
+
+  &:hover {
+    color: $color-text2;
+    box-shadow: none;
+    transform: translate3d(0, 5px, 0);
+  }
+
+  @include mq(sm) {
+    padding: 1.4rem 2rem;
+  }
+
+  @include mq(md) {
+    padding: 1.9rem 2rem;
+  }
+}
+
+.c-button--top {
+  display: inline-block;
+  position: fixed;
+  right: 3%;
+  bottom: 5px;
+  padding: 1rem;
+  border: 2px solid $color-text2;
+  border-radius: 10px;
+  background: $color-accent1;
+
+  &:hover {
+    border: 2px solid $color-accent1;
+    background: #fff;
+
+    & a {
+      color: $color-accent1;
+    }
+
+    & svg {
+      fill: $color-accent1;
+    }
+  }
+
+  @include mq(sm) {
+    bottom: 10px;
+  }
+
+  @include mq(lg) {
+    bottom: 30px;
+  }
+}
+
+.c-button--top a {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  color: $color-text2;
+
+  @include mq(md) {
+    width: 128px;
+    height: 128px;
+  }
+
+  @include mq(lg) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.c-button--top svg {
+  position: absolute;
+  width: 64px;
+  margin-right: auto;
+  margin-left: auto;
+  top: 0;
+  fill: #fff;
+
+  @include mq(md) {
+    width: 128px;
+  }
+
+  @include mq(lg) {
+    width: 88px;
+  }
+}
+
+.c-button--top p {
+  margin-top: 3.2rem;
+  font-size: 1.3rem;
+  line-height: 1.1;
+
+  @include mq(md) {
+    margin-top: 4rem;
+    font-size: 2.6rem;
+  }
+
+  @include mq(lg) {
+    margin-top: 3.2rem;
+    font-size: 2rem;
+  }
+}

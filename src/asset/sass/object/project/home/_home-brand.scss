@@ -1,0 +1,45 @@
+@use "../../../global" as *;
+
+.p-home-brand {
+  margin-top: 2.5rem;
+
+  @include mq(md) {
+    margin-top: 5rem;
+  }
+}
+
+.p-home-brand__contents {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 0.5rem 0 0.5rem;
+  gap: 15px;
+
+  @include mq(sm) {
+    padding-top: 2.4rem;
+    gap: 30px;
+  }
+
+  @include mq(lg) {
+    padding-top: 1.7rem;
+    gap: 20px;
+  }
+}
+
+.p-home-brand__contents a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc((100% - 30px) / 3);
+  height: 100px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+
+  &:hover {
+    border: 1px solid $color-accent1;
+  }
+
+  @include mq(sm) {
+    max-width: 135px;
+    width: 100%;
+  }
+}

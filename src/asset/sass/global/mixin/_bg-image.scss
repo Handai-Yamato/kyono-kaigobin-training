@@ -1,0 +1,24 @@
+@mixin bg-image-jpg($filename) {
+	background-image: url("../img/#{$filename}.jpg");
+	background-size: cover;
+	background-position: center center;
+  }
+  
+  // @include bg-image($filename:bg-image);
+  
+  @mixin bg-image-png($filename) {
+	background-image: url("../img/#{$filename}.png");
+	background-size: cover;
+	background-position: center center;
+  }
+  
+  // @include bg-image-png($filename:bg-image);
+  
+  @mixin bg-image-svg($filename) {
+	background-image: url("../img/#{$filename}.svg");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+  }
+  
+  // @include bg-image-svg($filename:bg-image);

@@ -1,0 +1,18 @@
+/**
+ * #display
+ */
+@use "../../global" as *;
+
+.u-d-inline-block {
+    display: inline-block;
+}
+
+.u-d-block {
+    display: block;
+}
+
+.u-d-md-none {
+    @include mq(md) {
+        display: none;
+    }
+}

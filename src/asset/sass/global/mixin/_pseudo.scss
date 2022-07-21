@@ -1,0 +1,15 @@
+// 疑似要素
+@mixin pseudo($content: '', $position: absolute, $display: inline-block) {
+    position: $position;
+    display: $display;
+    content: $content;
+}
+
+
+// &::after {
+//     @include pseudo('foo');
+// }
+
+// &::after {
+//     @include pseudo(url('../img/logo.png'));
+// }

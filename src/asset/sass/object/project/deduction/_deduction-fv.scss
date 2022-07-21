@@ -1,0 +1,106 @@
+@use "../../../global" as *;
+
+.p-deduction-fv {
+  
+}
+
+.p-deduction-fv__img {
+  text-align: center;
+}
+
+.p-deduction-fv__img picture {
+  display: inline-block;
+}
+
+.p-deduction-fv__text p {
+  margin-top: 2.4rem;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.75;
+
+  @include mq(sm) {
+    font-size: calc(1.1rem + 11 * (100vw - 576px) / 416); //11px~22pxで可変
+  }
+
+  @include mq(md) {
+    margin-top: 4.8rem;
+  }
+
+  @include mq(lg) {
+    font-size: 2.2rem;
+  }
+}
+
+.p-deduction-fv__text--sm {
+  font-size: 1rem;
+
+  @include mq(sm) {
+    font-size: calc(1rem + 10 * (100vw - 576px) / 416); //10px~20pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 2rem;
+  }
+}
+
+.p-deduction-fv__text--lg {
+  font-size: 1.5rem;
+
+  @include mq(sm) {
+    font-size: calc(1.5rem + 15 * (100vw - 576px) / 416); //15px~30pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 3rem;
+  }
+}
+
+.p-deduction-fv__text--xl {
+  font-size: 2.5rem;
+
+  @include mq(sm) {
+    font-size: calc(2.5rem + 25 * (100vw - 576px) / 416); //25px~50pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 5rem;
+  }
+}
+
+.p-deduction-fv__calc {
+  text-align: center;
+}
+
+.p-deduction-fv__calc p {
+  margin-top: 2.4rem;
+
+  color: $color-accent1;
+  text-align: center;
+  font-size: 1.5rem;
+
+  @include mq(sm) {
+    font-size: calc(1.5rem + 15 * (100vw - 576px) / 416); //15px~30pxで可変
+  }
+
+  @include mq(md) {
+    margin-top: 4.8rem;
+  }
+
+  @include mq(lg) {
+    font-size: 3rem;
+  }
+}
+
+.p-deduction-fv__calc img {
+  display: inline-block;
+  margin-top: 1rem;
+
+  @include mq(md) {
+    margin-top: 2rem;
+  }
+
+  @include mq(lg) {
+  }
+}

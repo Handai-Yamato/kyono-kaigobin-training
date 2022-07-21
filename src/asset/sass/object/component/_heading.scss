@@ -1,0 +1,61 @@
+/**
+ * #heading
+ */
+@use "../../global" as *;
+
+.c-heading-2--white {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-top: 2.5rem;
+  padding-left: 1rem;
+  padding-bottom: 2.5rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: $color-text2;
+  background: $color-heading-background;
+
+  @include mq(sm) {
+    font-size: calc(1.6rem + 16 * (100vw - 575px) / 416); //32px~16pxで可変
+  }
+
+  @include mq(lg) {
+    padding-top: 1rem;
+    padding-right: 0.4rem;
+    padding-bottom: 1rem;
+    padding-left: 0.4rem;
+    font-size: 2rem;
+  }
+}
+
+.c-heading-2--black {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-left: 30px;
+  height: 40px;
+  border-bottom: 4px dotted #b7b7b7;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: $color-text1;
+
+  &::before {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    content: "";
+    width: 21px;
+    height: 17px;
+    background: url(../img/heading-icon.svg) no-repeat center center;
+  }
+
+  @include mq(sm) {
+    font-size: calc(1.6rem + 16 * (100vw - 575px) / 416); //32px~16pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,309 @@
+/**
+ * #guide
+ */
+@use "../global" as *;
+
+.l-guide {
+  padding-top: 5rem;
+  text-align: center;
+
+  @include mq(lg) {
+  }
+}
+
+.l-guide__inner {
+  padding-top: 2.2rem;
+  padding-bottom: 4.2rem;
+  background: $color-background2;
+
+  @include mq(lg) {
+    background: url(../img/guide-bg.jpg);
+    background-size: cover;
+  }
+}
+
+.l-guide__heading {
+  font-size: 2.5rem;
+
+  @include mq(sm) {
+    font-size: calc(2.5rem + 25 * (100vw - 576px) / 416); //25px~50pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 5rem;
+
+  }
+}
+
+.l-guide__contents {
+  @include mq(md) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  @include mq(xxl) {
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+}
+
+.l-guide__content {
+  width: 100%;
+  max-width: 660px;
+  margin-top: 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 1.5rem;
+  padding-right: 4.55%;
+  padding-bottom: 2.5rem;
+  padding-left: 4.55%;
+  background: $color-background1;
+
+  @include mq(md) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc((100% - 20px) / 2);
+    padding: 3rem;
+  }
+
+  @include mq(xxl) {
+    width: calc((100% - 60px) / 4);
+  }
+}
+
+.l-guide__content img {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.l-guide__content-title {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.75;
+
+  @include mq(sm) {
+    font-size: calc(1.6rem + 16 * (100vw - 576px) / 416); //16px~32pxで可変
+  }
+
+  @include mq(lg) {
+    font-size: 2rem;
+  }
+}
+
+.l-guide__border {
+  width: 100%;
+  max-width: 110px;
+  margin-right: auto;
+  margin-left: auto;
+  border-top: 2px solid $color-accent1;
+
+  @include mq(md) {
+    max-width: 33.333%;
+  }
+
+  @include mq(lg) {
+    max-width: 220px;
+  }
+}
+
+.l-guide__text {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  text-align: justify;
+  line-height: 1.75;
+  word-wrap: break-word;
+
+  @include mq(sm) {
+    max-width: 100%;
+    font-size: calc(1.1rem + 11 * (100vw - 576px) / 416); //11px~22pxで可変
+  }
+
+  @include mq(sm) {
+    font-size: 1.4rem;
+  }
+}
+
+.l-guide__more-button {
+  width: 59.09%;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq(sm) {
+    margin-top: 4rem;
+  }
+  @include mq(lg) {
+    width: 86.66%;
+  }
+}
+
+/*------ 送料について -------*/
+.l-guide--postage img {
+  width: 100%;
+  max-width: 52px;
+}
+
+.l-guide__text--postage p span {
+  color: $color-accent2;
+}
+
+/*------ お支払いについて -------*/
+.l-guide--payment img {
+  width: 100%;
+  max-width: 35px;
+}
+
+.l-guide__text--payment ul img {
+  width: 100%;
+  max-width: 300px;
+}
+
+/*------ お届けについて -------*/
+.l-guide__icon--date {
+  width: 100%;
+  max-width: 34px;
+}
+
+.l-guide__text--date span {
+  color: $color-accent2;
+}
+
+.l-guide__date-img p {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.l-guide__date-img img {
+  width: 100%;
+  max-width: 225px;
+  margin-top: 1rem;
+}
+
+.l-guide__date-img ul {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/*------ お問い合わせ -------*/
+.l-guide--contact img {
+  width: 100%;
+  max-width: 38px;
+}
+
+.l-guide__contact-button {
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*------ カレンダー -------*/
+.l-guide__calendar {
+  width: 100%;
+  max-width: 660px;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  margin-left: auto;
+  padding: 2.5rem 4.55% 2.5rem;
+  background: $color-background1;
+
+  @include mq(md) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: 100%;
+  }
+
+}
+
+.l-guide__calendar-inner {
+  width: 90.9%;
+  max-width: 300px;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  margin-left: auto;
+
+  @include mq(sm) {
+  }
+
+  @include mq(lg) {
+    display: flex;
+    justify-content: space-between;
+    max-width: unset;
+  }
+}
+
+.l-guide__calendar-icon {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.l-guide__calendar table {
+  width: 90.9%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq(lg) {
+    width: 30vw;
+    max-width: 420px;
+    height: 280px;
+  }
+}
+
+.l-guide__calendar .c-calendar {
+  margin-top: 25px;
+  @include mq(sm) {
+  }
+  @include mq(lg) {
+    margin-top: 0;
+  }
+}
+
+.l-guide__calendar .c-calendar + .c-calendar {
+  margin-top: 25px;
+  @include mq(sm) {
+    margin-top: 50px;
+  }
+  @include mq(lg) {
+    margin-top: 0;
+  }
+}
+
+.l-guide__calendar-example {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+
+    @include mq(sm) {
+        gap: 20px;
+    }
+
+    @include mq(md) {
+        margin-top: 3rem;
+    }
+}
+
+.l-guide__calendar-example--box {
+    display: inline-block;
+    width: 20px;
+    height: 17px;
+    background: #f2f2f2;
+
+
+    @include mq(sm) {
+        width: 40px;
+        height: 34px;
+    }
+}
+
+.l-guide__calendar-example p {
+    font-size: 2rem;
+
+}
