@@ -233,8 +233,8 @@ $header-height-pc: 150px;
   z-index: index($elements, l-header__gnav-mask);
   top: 0;
   left: 0;
-  height: 100dvh;
   height: 100vh; //fall back
+  height: 100dvh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -245,16 +245,16 @@ $header-height-pc: 150px;
   z-index: index($elements, l-header__gnav);
   top: 0;
   right: 0;
-  height: 100dvh;
   height: 100vh; //fall back
+  height: 100dvh;
   width: 71.2%;
   color: $color-accent1;
 }
 
 .l-header__list {
   margin-left: auto;
-  height: 100dvh;
   height: 100vh; //fall back
+  height: 100dvh;
   width: 100%;
   padding-top: 120px;
   flex-direction: column;
