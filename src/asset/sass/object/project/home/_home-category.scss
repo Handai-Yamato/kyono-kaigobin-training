@@ -31,10 +31,10 @@
   align-items: center;
   height: 92px;
   gap: 0.5rem;
-  padding: 1rem;
-  text-decoration: none;
+  padding: 1.6rem;
   border: 1px solid #cccccc;
   border-radius: 10px;
+  text-decoration: none;
   color: inherit;
   background: #fff;
 
@@ -55,6 +55,9 @@
 
 .p-home-category__content img {
   width: 25.4%;
+  @include mq(lg) {
+    width: 32%;
+  }
 }
 
 .p-home-category__text {
@@ -73,6 +76,7 @@
 
 .p-home-category__content-title {
   font-size: 1.3rem;
+  font-weight: 500;
 
   @include mq(sm) {
     font-size: calc(1.3rem + 14 * (100vw - 575px) / 192); //27px~16pxで可変

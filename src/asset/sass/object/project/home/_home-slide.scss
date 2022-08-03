@@ -13,111 +13,157 @@
   @include mq(md) {
     margin-top: 5rem;
   }
-
-  @include mq(lg) {
-    margin-top: 3rem;
-  }
 }
 
-.p-home-slide__img {
-  margin-right: 10px;
-  margin-left: 10px;
+/* ページネーションの色変更 */
+:root {
+  --swiper-theme-color: pink;
 }
 
-/* スライダーの設定 */
-.p-home-slide .slick-slide {
-  margin: 0 5px;
-}
-
-/* 矢印カスタマイズ */
-.p-home-slide .slide-arrow {
-  display: inline-block;
-  transition: all 0.5s;
-  position: absolute;
-  bottom: 50%;
-  z-index: index($elements, p-home-slide);
-}
-
-.p-home-slide .slide-arrow:hover {
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.p-home-slide .prev-arrow {
-  left: 5%;
-  width: 25px;
-
-  @include mq(sm) {
-    left: 1%;
-    width: 50px;
-  }
-
-  @include mq(lg) {
-    left: 23%;
-  }
-}
-.p-home-slide .next-arrow {
-  right: 5%;
-  width: 25px;
-
-  @include mq(sm) {
-    right: 1%;
-    width: 50px;
-  }
-
-  @include mq(lg) {
-    right: 23%;
-  }
-}
-
-button {
-  background: none;
-  border: none;
-  outline: none;
-}
-
-.slide-dots {
-  text-align: center;
-}
-
-.slide-dots li {
-  display: inline-block;
-  margin: 5px 10px;
-
-  @include mq(sm) {
-    margin: 5px 15px;
-  }
-
-  @include mq(lg) {
-    margin: 5px 10px;
-  }
-}
-
-.slide-dots button {
+//swiper
+.swiper-container {
   position: relative;
-  text-indent: -9999px;
+  overflow: hidden; //両橋見切れにする場合に記述
+  width: 100%; //希望のスライダー横幅
+  height: auto; //希望のスライダー高さ
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  .swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 40px; //スライダーコントロールを下部に表示させるための余白を設置する場合
+    width: 90%;
+    max-width: 700px !important; //両橋見切れにする場合の中心スライダー横幅
+    overflow: visible !important; //両橋見切れにする場合orスライダーコントロールを下部に表示させるに記述
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+      transition-timing-function: linear; //スライドを流し続ける場合
+      .swiper-slide {
+        // padding-right: 10px; //両橋見切れ状態で左右に余白をつける場合に記述
+        // padding-left: 10px; //両橋見切れ状態で左右に余白をつける場合に記述
+        // background-color: #fff; //スライドエフェクトをフェードにする場合背景色の指定がないと前のスライドが透けて見える
+        opacity: 0.5;
 
-  &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "●";
-    font-size: 10px;
-    text-indent: 0px;
-    color: #000;
-    opacity: 0.25;
+        .swiper-slide-inner1 {
+          // width: 700px;
+          height: 100%;
+        }
 
-    @include mq(sm) {
-      font-size: 20px;
+        .swiper-slide-inner2 {
+          height: 100%;
+        }
+
+        .swiper-slide-inner3 {
+          height: 100%;
+        }
+      }
+
+      .specify-active-class {
+        opacity: 1 !important;
+      }
     }
 
-    @include mq(lg) {
-      font-size: 10px;
+    #swiper-wrapper-c9dbf1e4e73fcc29 .swiper-slide.swiper-slide-duplicate.swiper-slide-active {
+      opacity: 1 !important;
+    }
+
+    /* ページネーション */
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+        background-color: #333; //ドットの色を変更したい場合
+        border: 1px solid #fff; //ドットのボーダーを変更したい場合
+        opacity: 1; //非アクティブなドットの不透明度を変更したい場合
+      }
+
+      span {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      bottom: 0%; //ドットの位置を変更したい場合
+      left: 0;
+    }
+
+    /* スクロールバー */
+    .swiper-scrollbar {
+      opacity: 0; //表示する場合は1に
+    }
+
+    /* 前後ナビゲーション */
+
+    //共通
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled {
+      opacity: 1; //非アクティブ時の不透明度を変更したい場合
+    }
+
+    //ナビゲーションサイズ
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 30px; //ナビゲーションサイズを変更したい場合
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    // 進む・戻るボタンを初期化
+    .swiper-button-next:after,
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-prev:after {
+      content: "";
+    }
+
+    //進む
+    .swiper-button-next {
+      // opacity: 1; //非アクティブ時の不透明度を変更したい場合
+      // color: pink; //進むボタンの色を変更したい場合
+      // // top: 105%; //進むボタンの位置を変更したい場合
+      // outline: none; //アウトラインを無効化
+      top: 50%;
+      right: 1.2%;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 25px;
+      background: url("../img/slide-next.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include mq(md) {
+        right: -3.5%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    //戻る
+    .swiper-button-prev {
+      // opacity: 1; //非アクティブ時の不透明度を変更したい場合
+      // color: pink; //戻るボタンの色を変更したい場合
+      // // top: 105%; //進むボタンの位置を変更したい場合
+      // outline: none; //アウトラインを無効化
+      top: 50%;
+      left: 1.2%;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 25px;
+      background: url("../img/slide-prev.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include mq(md) {
+        left: -3.5%;
+        width: 50px;
+        height: 50px;
+      }
     }
   }
-}
-
-.slide-dots .slick-active button::before {
-  z-index: 1;
-  color: pink !important;
 }

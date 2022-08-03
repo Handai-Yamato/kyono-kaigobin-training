@@ -32,7 +32,11 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
     />
-    <link rel="stylesheet" href="./../asset/css/style.css?ver.1.0.7" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./../asset/css/style.css?ver.1.0.8" />
   </head>
   <body>
     <!-- .l-header -->
@@ -555,15 +559,6 @@
               </div>
             </div>
 
-            <div class="l-sidebar__content l-sidebar__calendar">
-              <h2 class="l-sidebar__title c-heading-2--white">
-                営業日カレンダー
-              </h2>
-              <div class="l-sidebar__calendar-inner">
-                <div id="cal2" class="c-calendar">Calendar Loading</div>
-              </div>
-            </div>
-
             <div class="l-sidebar__content l-sidebar__price">
               <h2 class="l-sidebar__title c-heading-2--white">
                 価格帯から探す
@@ -637,6 +632,19 @@
                     >
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            <div class="l-sidebar__content l-sidebar__calendar">
+              <h2 class="l-sidebar__title c-heading-2--white">
+                営業日カレンダー
+              </h2>
+              <div class="l-sidebar__calendar-inner">
+                <div id="cal2" class="c-calendar">Calendar Loading</div>
+                <div class="l-sidebar__calendar-example">
+                  <div class="l-sidebar__calendar-example--box"></div>
+                  <p>休業日</p>
+                </div>
               </div>
             </div>
 
@@ -872,7 +880,8 @@
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./../asset/js/calendar.js"></script>
-    <script src="./../asset/js/script.js?ver.1.0.3"></script>
+    <script src="./../asset/js/script.js?ver.1.0.4"></script>
   </body>
 </html>

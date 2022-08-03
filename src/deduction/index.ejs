@@ -9,7 +9,6 @@
     <%- include('./../_common/_header',{path:path,}) %>
 
     <main class="l-main">
-      
       <!-- c-search -->
       <form class="c-search" accept-charset="euc-jp" method="get" action="https://esearch.rakuten.co.jp/rms/sd/esearch/vc" target="_top" name="searchForm">
         <input value="404432" type="hidden" name="sid" />
@@ -245,13 +244,6 @@
               </div>
             </div>
 
-            <div class="l-sidebar__content l-sidebar__calendar">
-              <h2 class="l-sidebar__title c-heading-2--white">営業日カレンダー</h2>
-              <div class="l-sidebar__calendar-inner">
-                <div id="cal2" class="c-calendar">Calendar Loading</div>
-              </div>
-            </div>
-
             <div class="l-sidebar__content l-sidebar__price">
               <h2 class="l-sidebar__title c-heading-2--white">価格帯から探す</h2>
               <div class="l-sidebar__content-box c-content-box">
@@ -268,6 +260,17 @@
                   <li class="l-sidebar__price-item"><a href="https://search.rakuten.co.jp/search/mall/?sid=404432&s=1&min=9000&max=9999">9,000円~9,999円</a></li>
                   <li class="l-sidebar__price-item"><a href="https://search.rakuten.co.jp/search/mall/?sid=404432&s=1&min=10000">10,000円&ensp;~</a></li>
                 </ul>
+              </div>
+            </div>
+
+            <div class="l-sidebar__content l-sidebar__calendar">
+              <h2 class="l-sidebar__title c-heading-2--white">営業日カレンダー</h2>
+              <div class="l-sidebar__calendar-inner">
+                <div id="cal2" class="c-calendar">Calendar Loading</div>
+                <div class="l-sidebar__calendar-example">
+                  <div class="l-sidebar__calendar-example--box"></div>
+                  <p>休業日</p>
+                </div>
               </div>
             </div>
 

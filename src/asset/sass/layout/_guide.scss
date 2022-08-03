@@ -151,6 +151,10 @@
 
 .l-guide__text--postage p span {
   color: $color-accent2;
+
+  @include mq(lg) {
+    font-size: 2rem;
+  }
 }
 
 /*------ お支払いについて -------*/
@@ -201,6 +205,12 @@
   margin-top: 2rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+.l-guide__contact-button + p {
+  @include mq(lg) {
+    font-size: 1.2rem;
+  }
 }
 
 /*------ カレンダー -------*/

@@ -14,30 +14,6 @@
 })();
 
 /*--------------------------------
-	iosでも100vhで画面いっぱいに表示
---------------------------------*/
-const setFillHeight = () => {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-};
-
-let vw = window.innerWidth;
-
-window.addEventListener("resize", () => {
-  if (vw === window.innerWidth) {
-    // 画面の横幅にサイズ変動がないので処理を終える
-    return;
-  }
-
-  // 画面の横幅のサイズ変動があった時のみ高さを再計算する
-  vw = window.innerWidth;
-  setFillHeight();
-});
-
-// 初期化
-setFillHeight();
-
-/*--------------------------------
 	ハンバーガーメニューの設定
 --------------------------------*/
 $(".js-hamburger").click(function () {
@@ -74,30 +50,112 @@ $(window).on("resize", function () {
 /*--------------------------------
 	スライダー
 --------------------------------*/
-$(function () {
-  $(".js-slider").slick({
-    arrows: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    centerMode: true,
-    centerPadding: "25%",
-    dots: true,
-    dotsClass: "slide-dots",
-    slidesToShow: 1,
-    speed: 400,
-    prevArrow: '<img src="./asset/img/slide-prev.svg" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="./asset/img/slide-next.svg" class="slide-arrow next-arrow">',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          centerMode: true,
-          centerPadding: "30px",
-          slidesToShow: 1,
-        },
-      },
-    ],
-  });
+//swiper
+const swiper = new Swiper(".js-swiper", {
+  // ドットを追加
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true, //クリックでスライドを有効化
+  },
+  // 前後ナビを追加
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  //スライドの方向を設定
+  direction: "horizontal", //horizontalで水平 verticalで垂直
+
+  /* fade */
+  // effect: 'coverflow',
+
+  /* card */
+  // grabCursor: true,
+  // effect: "cards",
+
+  /* creative */
+  // grabCursor: true,
+  // effect: "creative",
+  // creativeEffect: {
+  //   //transformプロパティを設定可能
+  //   prev: {
+  //     // 表示しているスライドの移動先
+  //     translate: [0, 0, -400], // translateをX,Y,Zで指定
+  //     origin: "left center",
+  //     translate: ["-5%", 0, -200],
+  //     rotate: [0, 100, 0],
+  //   },
+  //   next: {
+  //     // 次に表示されるスライドの設定
+  //     translate: ["100%", 0, 0],
+  //     origin: "right center",
+  //     translate: ["-5%", 0, -200],
+  //     rotate: [0, -100, 0],
+  //   },
+  // },
+
+  // 事前の画像読み込み
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true,
+  },
+
+  //
+  
+  // activeなスライダーのクラス名変更
+  slideActiveClass: "specify-active-class",
+  
+  //スライドのループを設定
+  loop: true, //trueでループ falseでループしない(スライドが１枚の場合コントロールを表示させない場合はfalse)
+  loopAdditionalSlides: 1,// 無限ループさせる場合に複製するスライド数
+
+  //両端見切れ状態にするかどうか
+  centeredSlides: true, //slidePerViewが３以上の場合、１枚目がセンタリングされる
+
+  //一度に表示するスライドの数を設定
+  slidesPerView: 1.1,
+
+  //スライドのスピードを設定
+  speed: 1000, //流し続ける場合は基本的に5000以上に設定
+
+  //自動スライドを設定
+  autoplay: {
+    delay: 4000, //自動スライドの秒数
+    disableOnInteraction: false, //スライドクリックで自動スライドを停止させるか設定
+    reverseDirection: false, // trueで逆方向にスライド
+  },
+
+  //一度のスライドでいくつコンテンツをスライドさせるか
+  slidesPerGroup: 1,
+
+  //1画面で見えるスライド数を指定します。autoにして常にスライドが見える
+  spaceBetween: 1,
+
+  //スワイプでスライドを有効化
+  allowTouchMove: false, // falseで無効化 流し続ける場合はfalse
+
+  //スライド同士の余白を設定
+  spaceBetween: 10, //数字のみ記述可能。単位はpxが出力される
+
+  //スライドが１枚の場合はコントロールを非表示
+  watchOverflow: true,
+
+  //スライド切り替え中は別のスライドへの切り替えを無効にする
+  preventInteractionOnTransition: true,
+
+  //メディアクエリ
+  breakpoints: {
+    // ウィンドウサイズが600px以下
+    0: {
+      slidesPerView: 1.0,
+    },
+    768: {
+      slidesPerView: 1.0,
+      centeredSlides: false,
+    },
+    1400: {
+      slidesPerView: 1.0,
+    },
+  },
 });
 
 /*--------------------------------

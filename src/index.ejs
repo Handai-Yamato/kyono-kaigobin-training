@@ -40,15 +40,61 @@
       <!-- /.c-keyword -->
 
       <!-- p-home-slider -->
-      <div class="p-home-slide js-slider">
-        <div class="p-home-slide__img">
-          <a href="https://search.rakuten.co.jp/search/mall/?sid=404432"><img src="./asset/img/home-slide-img01.jpg" alt="" /></a>
-        </div>
-        <div class="p-home-slide__img">
-          <a href=""><img src="./asset/img/home-slide-img02.jpg" alt="" /></a>
-        </div>
-        <div class="p-home-slide__img">
-          <a href=""><img src="./asset/img/home-slide-img03.jpg" alt="" /></a>
+      <!-- swiper -->
+      <div class="p-home-slide swiper-container">
+        <!-- swiperの大枠 横幅・高さ・座標・両橋見切れ様overflow:hiddenはこのセレクタに指定 -->
+        <div class="swiper js-swiper">
+          <!-- このセレクタがswiperのトリガーになる -->
+          <div class="swiper-wrapper">
+            <!-- このセレクタにスライドさせるコンテンツの高さを設定-->
+
+            <!-- スライド１枚目 開始 -->
+            <div class="swiper-slide">
+              <!-- スライド左右に余白を付ける場合はこのセレクタに設定 -->
+              <div class="swiper-slide-inner1">
+                <!-- スライド内のスタイルはここに記述 -->
+                <a href="https://search.rakuten.co.jp/search/mall/?sid=404432"><img src="./asset/img/home-slide-img01.jpg" alt="" /></a>
+              </div>
+            </div>
+            <!-- スライド１枚目 終了 -->
+
+            <!-- スライド２枚目 開始 -->
+            <div class="swiper-slide">
+              <!-- スライド左右に余白を付ける場合はこのセレクタに設定 -->
+              <div class="swiper-slide-inner2">
+                <!-- スライド内のスタイルはここに記述 -->
+                <a href=""><img src="./asset/img/home-slide-img02.jpg" alt="" /></a>
+              </div>
+            </div>
+            <!-- スライド２枚目 終了 -->
+
+            <!-- スライド３枚目 開始 -->
+            <div class="swiper-slide">
+              <!-- スライド左右に余白を付ける場合はこのセレクタに設定 -->
+              <div class="swiper-slide-inner3">
+                <!-- スライド内のスタイルはここに記述 -->
+                <a href=""><img src="./asset/img/home-slide-img03.jpg" alt="" /></a>
+              </div>
+            </div>
+            <!-- スライド３枚目 終了 -->
+
+            <!-- スライド３枚目 開始 -->
+            <div class="swiper-slide">
+              <!-- スライド左右に余白を付ける場合はこのセレクタに設定 -->
+              <div class="swiper-slide-inner3">
+                <!-- スライド内のスタイルはここに記述 -->
+                <a href=""><img src="./asset/img/home-slide-img04.jpg" alt="" /></a>
+              </div>
+            </div>
+            <!-- スライド３枚目 終了 -->
+          </div>
+          <!-- ページネーション -->
+          <div class="swiper-pagination"></div>
+          <!-- ナビボタン -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <!-- スクロールバー -->
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
 
@@ -375,13 +421,6 @@
               </div>
             </div>
 
-            <div class="l-sidebar__content l-sidebar__calendar">
-              <h2 class="l-sidebar__title c-heading-2--white">営業日カレンダー</h2>
-              <div class="l-sidebar__calendar-inner">
-                <div id="cal2" class="c-calendar">Calendar Loading</div>
-              </div>
-            </div>
-
             <div class="l-sidebar__content l-sidebar__price">
               <h2 class="l-sidebar__title c-heading-2--white">価格帯から探す</h2>
               <div class="l-sidebar__content-box c-content-box">
@@ -398,6 +437,17 @@
                   <li class="l-sidebar__price-item"><a href="https://search.rakuten.co.jp/search/mall/?sid=404432&s=1&min=9000&max=9999">9,000円~9,999円</a></li>
                   <li class="l-sidebar__price-item"><a href="https://search.rakuten.co.jp/search/mall/?sid=404432&s=1&min=10000">10,000円&ensp;~</a></li>
                 </ul>
+              </div>
+            </div>
+
+            <div class="l-sidebar__content l-sidebar__calendar">
+              <h2 class="l-sidebar__title c-heading-2--white">営業日カレンダー</h2>
+              <div class="l-sidebar__calendar-inner">
+                <div id="cal2" class="c-calendar">Calendar Loading</div>
+                <div class="l-sidebar__calendar-example">
+                  <div class="l-sidebar__calendar-example--box"></div>
+                  <p>休業日</p>
+                </div>
               </div>
             </div>
 

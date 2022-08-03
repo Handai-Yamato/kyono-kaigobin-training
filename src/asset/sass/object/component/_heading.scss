@@ -12,11 +12,13 @@
   padding-bottom: 2.5rem;
   font-weight: 500;
   font-size: 1.6rem;
+  line-height: 1.75;
   color: $color-text2;
   background: $color-heading-background;
 
   @include mq(sm) {
-    font-size: calc(1.6rem + 16 * (100vw - 575px) / 416); //32px~16pxで可変
+    
+    font-size: calc(1.6rem + 16 * (100vw - 575px) / 446); //32px~16pxで可変
   }
 
   @include mq(lg) {

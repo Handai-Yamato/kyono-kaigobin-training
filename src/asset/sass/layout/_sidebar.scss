@@ -12,8 +12,12 @@
 
   @include mq(lg) {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     margin-top: 5rem;
+  }
+
+  @include mq(xl) {
+    max-width: 300px;
   }
 }
 
@@ -152,7 +156,7 @@
   }
 
   @include mq(lg) {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -199,6 +203,7 @@
   @include mq(lg) {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -442,7 +447,7 @@
   }
 
   @include mq(lg) {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 }
 
@@ -488,7 +493,7 @@
   }
 
   @include mq(lg) {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 }
 
@@ -550,6 +555,43 @@
 .l-sidebar__calendar table {
   width: 100%;
 }
+
+
+.l-sidebar__calendar-example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+
+  @include mq(sm) {
+      gap: 20px;
+  }
+
+  @include mq(md) {
+      margin-top: 3rem;
+  }
+}
+
+.l-sidebar__calendar-example--box {
+  display: inline-block;
+  width: 20px;
+  height: 17px;
+  background: #f2f2f2;
+
+
+  @include mq(sm) {
+      width: 40px;
+      height: 34px;
+  }
+}
+
+.l-sidebar__calendar-example p {
+  font-size: 2rem;
+
+}
+
+
 /*--------------------------------
   メールマガジン
   --------------------------------*/
@@ -583,7 +625,20 @@
   }
 
   @include mq(lg) {
+    width: unset;
     height: 60px;
+  }
+}
+
+.l-sidebar__mail-icon img {
+  width: 28px;
+
+  @include mq(sm) {
+    width: 56px;
+  }
+
+  @include mq(lg) {
+    width: 30px;
   }
 }
 

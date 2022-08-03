@@ -1,0 +1,5 @@
+#node_modulesを除外する
+*node_modules/
+
+#DS_storeを除外する
+.DS_store
