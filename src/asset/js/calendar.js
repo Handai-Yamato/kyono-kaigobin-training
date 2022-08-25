@@ -73,9 +73,6 @@
 
 var calObj = new Array();
 
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //【以下カレンダー0の設定】
@@ -239,9 +236,9 @@ function cal_create(calId) {
   var calHTML = "<table border='0' cellspacing='0' cellpadding='0' class='cal'>";
   calHTML += "<tr><th colspan='7'>";
   calHTML += "<div class='cal_ui'>";
-//   calHTML += "<input type='button' onclick='cal_move(" + calId + ",-1);' value='&lt; prev' />";
-//   calHTML += "<input type='button' onclick='cal_move(" + calId + ",null);' value='-' />";
-//   calHTML += "<input type='button' onclick='cal_move(" + calId + ",1);' value='next &gt;' />";
+  //   calHTML += "<input type='button' onclick='cal_move(" + calId + ",-1);' value='&lt; prev' />";
+  //   calHTML += "<input type='button' onclick='cal_move(" + calId + ",null);' value='-' />";
+  //   calHTML += "<input type='button' onclick='cal_move(" + calId + ",1);' value='next &gt;' />";
   calHTML += "</div>";
   calHTML += "<p>" + year + "年" + calObj.monthName[month] + "</p></th></tr>";
   calHTML += "<tr class='headline'>";
@@ -438,9 +435,3 @@ function cal_clone(obj) {
 }
 function cal_getMonth() {}
 cal_init();
-
-
-
-
-
-

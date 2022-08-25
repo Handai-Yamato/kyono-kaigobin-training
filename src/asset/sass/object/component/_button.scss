@@ -28,10 +28,10 @@
 .c-button--contact {
   display: block;
   width: 100%;
-  max-width: 135px;
+  max-width: 270px;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-decoration: none;
   text-align: center;
   color: $color-accent1;
@@ -41,6 +41,17 @@
   &:hover {
     color: $color-text2;
     background: $color-accent1;
+  }
+
+  @include mq(sm) {
+    font-size: calc(1.3rem + 9 * (100vw - 576px) / 448); //22px~11pxで可変
+
+  }
+
+  @include mq(lg) {
+    max-width: 220px;
+    font-size: 1.4rem;
+
   }
 }
 

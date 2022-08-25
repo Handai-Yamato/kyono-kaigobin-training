@@ -170,14 +170,14 @@ $header-height-pc: 150px;
   position: absolute;
   left: -10px;
   width: 50px;
-  height: 7px;
-  background-color: #333333;
+  height: 5px;
+  background-color: #666;
   border-radius: 4.303px;
   transition: ease 0.75s;
 
   @include mq(sm) {
     width: 60px;
-    height: 10px;
+    height: 8px;
   }
 }
 
@@ -190,11 +190,8 @@ $header-height-pc: 150px;
 }
 
 .l-header__hamburger span:nth-of-type(2) {
-  top: 15px;
-
-  @include mq(sm) {
-    top: 20px;
-  }
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .l-header__hamburger span:nth-of-type(3) {

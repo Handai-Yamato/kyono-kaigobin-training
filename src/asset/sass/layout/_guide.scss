@@ -124,7 +124,7 @@
     font-size: calc(1.1rem + 11 * (100vw - 576px) / 416); //11px~22pxで可変
   }
 
-  @include mq(sm) {
+  @include mq(lg) {
     font-size: 1.4rem;
   }
 }
