@@ -26,7 +26,7 @@ const browserSync = require("browser-sync");
 
 // 入出力するフォルダを指定
 const srcBase = "./src";
-const distBase = "./dist";
+const distBase = "./docs";
 
 const srcPath = {
     scss: srcBase + "/asset/sass/**/*.scss",
