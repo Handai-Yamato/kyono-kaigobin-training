@@ -1,6 +1,3 @@
-#distファイルを除外する
-*dist/
-
 #node_modulesを除外する
 *node_modules/
 
